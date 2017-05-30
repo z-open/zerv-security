@@ -1,0 +1,32 @@
+{
+    "name": "zerv-security",
+    "version": "0.0.1",
+    "description": "Zerv module providing security support",
+    "main": "lib/zerv-security.js",
+    "keywords": [
+        "socket",
+        "socket.io",
+        "jwt"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/z-open/zerv-security.git"
+    },
+    "scripts": {
+        "test": "./node_modules/jasmine/bin/jasmine.js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.14.0",
+        "lodash": "^4.15.0",
+        "promise": "^7.1.1",
+        "request": "^2.74.0",
+        "zerv-core": "git://github.com/z-open/zerv-core#1.0.2",
+        "zerv-sync": "git://github.com/z-open/zerv-sync#1.0.7",
+        "uuid": "^2.0.1",
+        "zlog": "git://github.com/z-open/zlog#1.0.0"
+    },
+    "devDependencies": {
+        "jasmine": "^2.4.1"
+    }
+}
