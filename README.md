@@ -24,11 +24,6 @@ It requires the client to use the zerv-ng-security bower package to enforce sync
 
 ### Collaborate
 
-to run the test: npm test
-
-
-Note: you might increase constant CURRENT_SYNC_VERSION to prevent incompatible bower client libraries to operate.
-
 
 ###To Implement
 
