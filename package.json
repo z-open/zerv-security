@@ -1,12 +1,11 @@
 {
     "name": "zerv-security",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Zerv module providing security support",
     "main": "lib/zerv-security.js",
     "keywords": [
-        "socket",
-        "socket.io",
-        "jwt"
+        "zerv",
+        "security"
     ],
     "repository": {
         "type": "git",
