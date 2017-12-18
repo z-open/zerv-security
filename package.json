@@ -1,6 +1,6 @@
 {
     "name": "zerv-security",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Zerv module providing security support",
     "main": "lib/zerv-security.js",
     "keywords": [
