@@ -1,6 +1,6 @@
 {
     "name": "zerv-security",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Zerv module providing security support",
     "main": "lib/zerv-security.js",
     "keywords": [
@@ -16,16 +16,16 @@
     },
     "license": "MIT",
     "dependencies": {
-        "express": "^4.14.0",
-        "lodash": "^4.15.0",
-        "promise": "^7.1.1",
-        "request": "^2.74.0",
-        "uuid": "^2.0.1",
-        "zlog": "git://github.com/z-open/zlog#1.0.0"
+        "express": "4.17.1",
+        "lodash": "4.17.15",
+        "promise": "7.1.1",
+        "request": "2.88.2",
+        "uuid": "2.0.1",
+        "zimit-zlog": "1.0.6"
     },
     "devDependencies": {
-        "jasmine": "^2.4.1",
-        "zerv-core": "git://github.com/z-open/zerv-core#1.0.3",
+        "jasmine": "3.5.0",
+        "zerv-core": "git://github.com/z-open/zerv-core#1.2.3",
         "zerv-sync": "git://github.com/z-open/zerv-sync#1.0.8"
     }
 }
