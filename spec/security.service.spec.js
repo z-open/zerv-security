@@ -1,7 +1,7 @@
 'strict mode';
 
 const _ = require('lodash');
-const zlog = require('zlog');
+const zlog = require('zimit-zlog');
 zlog.setRootLogger('ALL');
 
 var security = require("../lib/security.service");
