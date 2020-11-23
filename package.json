@@ -1,6 +1,6 @@
 {
     "name": "zerv-security",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Zerv module providing security support",
     "main": "lib/zerv-security.js",
     "keywords": [
@@ -12,7 +12,9 @@
         "url": "https://github.com/z-open/zerv-security.git"
     },
     "scripts": {
-        "test": "./node_modules/jasmine/bin/jasmine.js"
+        "test": "./node_modules/jasmine/bin/jasmine.js specs/*.spec.js",
+        "eslint": "./node_modules/eslint/bin/eslint.js lib/**/*.js specs/**/*.js",
+        "eslintfix": "./node_modules/eslint/bin/eslint.js --fix lib/**/*.js specs/**/*.js"
     },
     "license": "MIT",
     "dependencies": {
@@ -23,7 +25,9 @@
     },
     "devDependencies": {
         "jasmine": "3.5.0",
-        "zerv-core": "git://github.com/z-open/zerv-core#1.2.3",
-        "zerv-sync": "git://github.com/z-open/zerv-sync#1.0.11"
+        "eslint": "6.8.0",
+        "eslint-config-google": "0.14.0",
+        "zerv-core": "git://github.com/z-open/zerv-core#1.2.6",
+        "zerv-sync": "git://github.com/z-open/zerv-sync#1.1.12"
     }
 }

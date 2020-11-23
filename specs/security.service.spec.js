@@ -2,17 +2,39 @@
 
 const _ = require('lodash');
 const zlog = require('zimit-zlog');
-zlog.setRootLogger('ALL');
+zlog.setRootLogger('all');
 
-var security = require("../lib/security.service");
+const service = require('../lib/security.service');
 
-describe("Security", function () {
-    beforeEach(function () {
+describe('Security service', () => {
+    it('formatUserSecurityData', () => {
+        const securityData = {
+            env: 'client', // this data would be for the client not a server which has different types of protected resources
+            user: {
+                id: 'myUserId',
+                display: 'king of kings'
+            },
+            policies: 'somePolices',
+            dictionary: 'aDictionaryOfProtectedResources',
+            resourceTypes: 'typesOfProtectedResources',
+        };
+        const result = service.formatUserSecurityData(securityData);
+        expect(result).toEqual({
+            id: 'myUserId',
+            revision: jasmine.any(Number),
+            timestamp: Object({}),
+            userId: 'myUserId', display: 'king of kings',
+            policies: 'somePolices',
+            dictionary: 'aDictionaryOfProtectedResources',
+            resourceTypes: 'typesOfProtectedResources'
+        });
+
+        expect(result.revision <= Date.now()).toBeTrue();
     });
 
 
-    it("should validate policy", function () {
-        security.load({
+    it('should validate policy', () => {
+        service.load({
             dictionary: createDictionary(),
             resourceTypes: createDictionaryResourceTypes(),
             policies: [createPolicy()],
@@ -21,12 +43,11 @@ describe("Security", function () {
             defaultRole: 'admin',
             conditionFactories: []
         });
-
     });
 
-    it("should not validate policy due to", function () {
-        const load = function () {
-            security.load({
+    it('should not validate policy due to', () => {
+        const load = () => {
+            service.load({
                 dictionary: [],
                 resourceTypes: [],
                 policies: [createPolicy()],
@@ -35,7 +56,7 @@ describe("Security", function () {
                 defaultRole: 'admin',
                 conditionFactories: []
             });
-        }
+        };
 
         expect(load).toThrowError('Invalid Application Security Configuration');
     });
@@ -45,17 +66,17 @@ describe("Security", function () {
             name: 'AppMenuItem',
             env: 'client',
             settings: [
-                { value: 'show', priority: 1 },
-                { value: 'hide', priority: 0 }
+                {value: 'show', priority: 1},
+                {value: 'hide', priority: 0}
             ]
         },
         {
             name: 'screenForm',
             env: 'client',
             settings: [
-                { value: 'readOnly', priority: 1 },
-                { value: 'edit', priority: 0 },
-                { value: 'create', priority: 0 }
+                {value: 'readOnly', priority: 1},
+                {value: 'edit', priority: 0},
+                {value: 'create', priority: 0}
             ]
         }];
     }
@@ -131,11 +152,4 @@ describe("Security", function () {
             ]
         };
     }
-
-
-
-
-
-
-
 });
